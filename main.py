@@ -1,12 +1,16 @@
 from exchanges.binance_api import BinanceApi
+from exchanges.kucoin_api import KucoinApi
 from getTokenPrice import GetTokenPrice;
 
 
 def main():
-    price = GetTokenPrice("COINGECKO", "BTC")
-    price.price_by_coinbase()
-    print("====>>BINANCE<<<======")
-    binance_api = BinanceApi()
-    print(str(binance_api.get_token_price("ETH")))
+    # price = GetTokenPrice("COINGECKO", "BTC")
+    # price.price_by_coinbase()
+    # print("====>>BINANCE<<<======")
+    # binance_api = BinanceApi()
+    # print(str(binance_api.get_token_price()))
+    print("====>> KUCOIN <<=====")
+    result = KucoinApi().get_token_price()
+    print(result)
 
 main()
